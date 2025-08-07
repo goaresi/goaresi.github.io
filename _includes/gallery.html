@@ -2,7 +2,7 @@
   <h2 class="text-center text-green-800 text-4xl sm:text-5xl font-bold font-outfit">Gallery</h2>
 
   <!-- Desktop Grid -->
-  <div class="sm:grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-6 w-full max-w-full">
+  <div class="sm:hidden md:grid-cols-2 lg:grid-cols-2 gap-6 w-full max-w-full">
     {% for embed in site.data.gallery.embeds %}
       <div class="w-full">
         {{ embed | raw }}
@@ -11,7 +11,7 @@
   </div>
 
   <!-- Mobile Scroll -->
-  <div class="block sm:hidden w-full overflow-x-auto">
+  <div class="block md:hidden w-full overflow-x-auto">
     <div class="flex gap-4 w-max">
       {% for embed in site.data.gallery.embeds %}
         <div class="min-w-[90vw] flex-shrink-0">
