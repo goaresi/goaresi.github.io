@@ -1,0 +1,25 @@
+<section id="travel" class="w-full px-4 md:px-10 lg:px-32 py-14 bg-white flex flex-col items-center gap-12 overflow-hidden">
+  <div class="text-center text-green-800 text-4xl md:text-6xl font-bold font-poppins">
+    Pesan Tiket!
+  </div>
+
+  <!-- Carousel on small screens, grid on large -->
+  <div class="w-full lg:flex lg:justify-center lg:gap-6 overflow-x-auto no-scrollbar">
+    <div class="flex lg:flex-none gap-4 px-2 lg:px-0">
+      {% for item in site.data.travel.paket %}
+        <a
+          href="{{ item.waLink }}"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="aspect-[4/5] w-[80%] sm:w-[60%] md:w-[45%] lg:w-80 max-w-full rounded-3xl overflow-hidden border border-green-900 transition-transform duration-300"
+        >
+          <img
+            src="{{ item.image }}"
+            alt="Paket Wisata {{ forloop.index }}"
+            class="w-full h-full object-cover"
+          />
+        </a>
+      {% endfor %}
+    </div>
+  </div>
+</section>

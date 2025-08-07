@@ -1,0 +1,16 @@
+<div class="w-full px-4 md:px-10 lg:px-32 pt-5 pb-14 bg-white flex flex-col items-center gap-12 overflow-hidden">
+  <div class="text-center text-green-800 text-4xl md:text-6xl font-bold font-poppins">
+    {{ site.data.details.map.title }}
+  </div>
+
+  <div class="w-full rounded-3xl border border-green-900 overflow-hidden
+              aspect-[4/3] sm:aspect-[16/9] md:aspect-[1200/566] max-w-[1200px]">
+    <iframe
+      src="{{ site.data.details.map.iframe_src }}"
+      allowfullscreen
+      loading="lazy"
+      class="w-full h-full"
+      referrerpolicy="no-referrer-when-downgrade"
+    ></iframe>
+  </div>
+</div>

@@ -1,0 +1,24 @@
+title: "Kunjungi Goa Resi"
+description: |
+  Selami pesona alam yang belum banyak dijamah di Goa Resi—goa alami dengan formasi batuan menakjubkan, udara sejuk, dan suasana tenang yang membawa kedamaian. Terletak di tengah alam yang asri, Goa Resi bukan hanya destinasi wisata, tapi pelarian sempurna dari hiruk-pikuk kota. Cocok untuk pecinta alam, petualang, maupun keluarga yang ingin menikmati pengalaman tak terlupakan.
+
+activities:
+  - title: "Outbound"
+    img: "/assets/img/outbound.png"
+    description: "Nikmati tantangan di luar ruangan dan permainan membangun tim di area outbound."
+
+  - title: "Water Park"
+    img: "/assets/img/waterpark.png"
+    description: "Berenang dan berseluncur di wahana air yang menyegarkan dan seru di wahana waterpark."
+
+  - title: "Paintball Gun"
+    img: "/assets/img/paintball.png"
+    description: "Uji ketepatan bidik dan strategi dengan misi paintball yang seru."
+
+  - title: "Flying Fox"
+    img: "/assets/img/flying-fox.png"
+    description: "Rasakan sensasi adrenalin yang memacu dengan wahana flying fox kami yang menegangkan."
+
+map:
+  title: Peta Wisata
+  iframe_src: "https://www.google.com/maps/d/embed?mid=1Ny3W2Wp8lxLNt0_LhrwqcwKUCLGMYCQ&ehbc=2E312F"

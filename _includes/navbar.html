@@ -1,0 +1,77 @@
+<nav
+  id="navbar"
+  class="fixed top-0 w-full z-50 transition-all duration-300 bg-transparent"
+>
+  <div class="w-full flex justify-between items-center px-6 md:px-12 lg:px-20 py-4">
+    <!-- Logo as menu toggle on mobile -->
+    <button
+      onclick="toggleMenu()"
+      class="w-20 h-20 flex justify-center items-center focus:outline-none md:cursor-default"
+      aria-label="Toggle menu"
+    >
+      <img class="w-16 h-16 rounded-full" src="assets/img/logo-goa-resi.png" alt="Logo Goa Resi" />
+    </button>
+
+    <!-- Desktop Menu -->
+    <div class="hidden md:flex gap-6">
+      {% assign menuItems = 
+        "Beranda:#home,Tentang:#details,Galeri:#gallery,Informasi:#activities,Kontak:#travel" | split: "," %}
+      {% for item in menuItems %}
+        {% assign parts = item | split: ":" %}
+        <a 
+          href="{{ parts[1] }}" 
+          class="text-white text-base lg:text-lg font-medium font-poppins hover:text-green-600 transition-colors"
+        >
+          {{ parts[0] }}
+        </a>
+      {% endfor %}
+    </div>
+  </div>
+
+  <!-- Mobile Menu -->
+  <div
+    id="mobileMenu"
+    class="hidden md:hidden pt-6 px-6 pb-6 transition-all duration-300"
+  >
+    <div class="flex flex-col gap-4">
+      {% for item in menuItems %}
+        {% assign parts = item | split: ":" %}
+        <a
+          href="{{ parts[1] }}"
+          onclick="closeMenu()"
+          class="text-white text-base font-medium font-poppins text-left hover:text-blue-400 transition-colors"
+        >
+          {{ parts[0] }}
+        </a>
+      {% endfor %}
+    </div>
+  </div>
+</nav>
+
+<script>
+  // Scroll state for blur/background
+  window.addEventListener('scroll', function () {
+    const navbar = document.getElementById('navbar');
+    if (window.scrollY > 50) {
+      navbar.classList.add('bg-white/80', 'shadow-lg', 'backdrop-blur-sm');
+      navbar.classList.remove('bg-transparent');
+      navbar.querySelectorAll('a').forEach(link => link.classList.remove('text-white'));
+      navbar.querySelectorAll('a').forEach(link => link.classList.add('text-gray-800'));
+    } else {
+      navbar.classList.remove('bg-white/80', 'shadow-lg', 'backdrop-blur-sm');
+      navbar.classList.add('bg-transparent');
+      navbar.querySelectorAll('a').forEach(link => link.classList.remove('text-gray-800'));
+      navbar.querySelectorAll('a').forEach(link => link.classList.add('text-white'));
+    }
+  });
+
+  // Mobile menu toggle
+  function toggleMenu() {
+    const mobileMenu = document.getElementById('mobileMenu');
+    mobileMenu.classList.toggle('hidden');
+  }
+
+  function closeMenu() {
+    document.getElementById('mobileMenu').classList.add('hidden');
+  }
+</script>
